@@ -41,9 +41,9 @@
         <img id="logo" src="../jacket_medium.png" alt="Logo" /><span id="header-title">Jackett</span>
 
         <div class="pull-right jackett-apikey">
-            <span class="input-header">API Key: </span>
+            <span class="input-header">API 密钥: </span>
             <input id="api-key-input" class="form-control input-right" type="text" value="" placeholder="API Key" readonly="">
-            <button id="api-key-copy-button" title="Copy API Key to clipboard" class="btn btn-primary btn-xs">
+            <button id="api-key-copy-button" title="将 API密钥 复制到 剪贴板" class="btn btn-primary btn-xs">
                 <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
             </button>
         </div>
@@ -60,93 +60,93 @@
             <div id="filters" class="btn-group btn-group-sm">
             </div>
             <button id="jackett-add-indexer" class="btn btn-success btn-sm">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add indexer
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加索引器
             </button>
             <button id="jackett-show-search" class="btn btn-success btn-sm">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Manual Search
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 手动搜索
             </button>
             <button id="jackett-show-releases" class="btn btn-primary btn-sm">
-                <i class="fa fa-database"></i>  View cached releases
+                <i class="fa fa-database"></i>  查看缓存
             </button>
             <button id="jackett-test-all" class="btn btn-warning btn-sm">
-                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Test All
+                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> 全部测试
             </button>
         </div>
-        <h3>Configured Indexers</h3>
+        <h3>已配置的索引器</h3>
         <div id="indexers"></div>
         <hr />
 
         <div class="input-area">
-            <h4>Adding a Jackett indexer in Sonarr or Radarr</h4>
+            <h4>在 Sonarr 或 Radarr 中添加 Jackett索引器</h4>
             <ol>
-                <li>Go to <b>Settings > Indexers > Add > Torznab > Custom</b>.</li>
-                <li>Click on the indexers corresponding <button type="button" class="btn btn-xs btn-info">Copy Torznab Feed</button> button and paste it into the Sonarr/Radarr <b>URL</b> field.</li>
-                <li>For the <b>API key</b> use <b class="api-key-text"></b>.</li>
-                <li>Configure the correct category IDs via the <b>(Anime) Categories</b> options. See the Jackett indexer configuration for a list of supported categories.</li>
+                <li>转到 <b>设置 > 索引器 > 添加 > Torznab > 自定义</b>.</li>
+                <li>点击相应的索引器 <button type="button" class="btn btn-xs btn-info">复制 Torznab Feed</button> 按钮并将其粘贴到 Sonarr / Radarr <b>URL</b> 字段中。</li>
+                <li>关于 <b>API 密钥</b> 请复制 <b class="api-key-text"></b></li>
+                <li>通过 <b>(动漫) 类别</b> 选项配置正确的类别 ID。有关受支持类别的列表，请参阅 Jackett 索引器配置。</li>
             </ol>
-            <h4>Adding a Jackett indexer in CouchPotato</h4>
+            <h4>在 CouchPotato 中添加 Jackett索引器</h4>
             <ol>
-                <li>Go to <b>Settings > Searchers</b>.</li>
-                <li>Enable <b>TorrentPotato</b>.
-                <li>Click on the indexers corresponding <button type="button" class="btn btn-xs btn-info">Copy Potato Feed</button> button and paste it into the CouchPotato <b>host</b> field.</li>
-                <li>For the <b>Passkey</b> use <b class="api-key-text"></b>. Leave the <b>username</b> field blank.</li>
+                <li>转到 <b>设置 > 搜索器设置</b>.</li>
+                <li>启用 <b>TorrentPotato</b>.
+                <li>点击相应的索引器 <button type="button" class="btn btn-xs btn-info">复制 Potato Feed</button> 按钮并将其粘贴到 CouchPotato <b>Host</b> 字段中。</li>
+                <li>关于 <b>密钥</b> 请使用 <b class="api-key-text"></b> 将 <b>用户名</b> 字段留空。</li>
             </ol>
-            <h4>Adding a Jackett indexer to RSS clients (RSS feed)</h4>
+            <h4>在 RSS客户端 中添加 Jackett RSS源</h4>
             <ol>
-                <li>Click on the indexers corresponding <button type="button" class="btn btn-xs btn-info">Copy RSS Feed</button> button and paste it into the URL field of the RSS client.</li>
+                <li>单击相应的索引器 <button type="button" class="btn btn-xs btn-info">复制 RSS 源</button> 按钮并将其粘贴到 RSS 客户端 <b>URL</b> 字段中。</li>
                 <li>
-                    You can adjust the <b>q</b> (search string) and <b>cat</b> (categories) arguments accordingly.
-                    E.g. <b>...&cat=2030,2040&q=big+buck+bunny</b> will search for "big buck bunny" in the Movies/SD (2030) and Movies/HD (2040) categories (See the indexer configuration for available categories).
+                    您可以相应地调整 <b>q</b> (搜索字符串) 和 <b>cat</b> (类别) 参数。
+                    例如 <b>...&cat=2030,2040&q=big+buck+bunny</b> , 将会在 电影 / SD(2030) 和 电影 / HD(2040) 类别中搜索 “Big Buck Bunny” （有关可用类别，请参阅索引器配置）。
                 </li>
             </ol>
         </div>
         <hr />
-        <h3>Jackett Configuration</h3>
+        <h3>Jackett 配置</h3>
         <div class="text-center">
             <div class="btn-toolbar">
                 <button id="change-jackett-port" class="btn btn-primary btn-sm">
-                    <i class="fa fa-wrench"></i>   Apply server settings <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
+                    <i class="fa fa-wrench"></i>   应用服务器设置 <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
                 </button>
                 <button id="view-jackett-logs" class="btn btn-success btn-sm">
-                    <i class="fa fa-rss"></i> View logs <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
+                    <i class="fa fa-rss"></i> 查看日志 <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
                 </button>
                 <button id="trigger-updater" class="btn btn-warning btn-sm">
-                    <i class="fa fa-wrench"></i>   Check for updates <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
+                    <i class="fa fa-wrench"></i>   检查更新 <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
                 </button>
             </div>
         </div>
         <br />
         <div class="input-area">
-            <span class="input-header">Admin password: </span>
-            <input id="jackett-adminpwd" class="form-control input-right" type="password" value="" placeholder="Blank to disable" />
+            <span class="input-header">管理员密码: </span>
+            <input id="jackett-adminpwd" class="form-control input-right" type="password" value="" placeholder="留空则不启用" />
             <button id="change-jackett-password" class="btn btn-primary btn-sm">
-                <i class="fa fa-user-secret"></i>  Set Password <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
+                <i class="fa fa-user-secret"></i>  设置密码 <span class="glyphicon glyphicon-ok-wrench" aria-hidden="true"></span>
             </button>
             <a href="Dashboard?logout=true" id="logoutBtn" style="display:none" class="btn btn-danger btn-sm">
                 Logout
             </a>
         </div>
         <div class="input-area">
-            <span class="input-header">Base path override: </span>
+            <span class="input-header">绝对路径设置: </span>
             <input id="jackett-basepathoverride" class="form-control input-right" type="text" value="" placeholder="/jackett">
         </div>
         <div class="input-area">
-            <span class="input-header">Base URL override: </span>
+            <span class="input-header">网址设置: </span>
             <input id="jackett-baseurloverride" class="form-control input-right" type="url" value="" placeholder="http://jackett:9117">
         </div>
         <div class="input-area">
-            <span class="input-header">Server port: </span>
+            <span class="input-header">服务器端口: </span>
             <input id="jackett-port" class="form-control input-right" type="text" value="" placeholder="9117">
         </div>
         <div class="input-area">
-            <span class="input-header">Blackhole directory: </span>
+            <span class="input-header">黑洞目录: </span>
             <input id="jackett-savedir" class="form-control input-right" type="text" value="" placeholder="c:\torrents\">
         </div>
 
         <div class="input-area">
-            <span class="input-header">Proxy type: </span>
+            <span class="input-header">代理类型: </span>
             <select id="jackett-proxy-type" class="form-control input-right">
-                <option value="-1">Disabled</option>
+                <option value="-1">关闭</option>
                 <option value="0">HTTP</option>
                 <option value="1">SOCKS4</option>
                 <option value="2">SOCKS5</option>
@@ -158,54 +158,54 @@
             </span>
         </div>
         <div class="input-area">
-            <span class="input-header">Proxy URL: </span>
+            <span class="input-header">代理网站: </span>
             <input id="jackett-proxy-url" class="form-control input-right" type="text" value="" placeholder="">
         </div>
         <div class="input-area">
-            <span class="input-header">Proxy port: </span>
+            <span class="input-header">代理端口: </span>
             <input id="jackett-proxy-port" class="form-control input-right" type="text" value="" placeholder="">
         </div>
         <div class="input-area">
-            <span class="input-header">Proxy username: </span>
+            <span class="input-header">代理用户名: </span>
             <input id="jackett-proxy-username" class="form-control input-right" type="text" value="" placeholder="">
         </div>
         <div class="input-area">
-            <span class="input-header">Proxy password: </span>
+            <span class="input-header">代理密码: </span>
             <input id="jackett-proxy-password" class="form-control input-right" type="password" value="" placeholder="">
         </div>
 
         <div class="input-area">
-            <span class="input-header">External access: </span>
+            <span class="input-header">外网访问: </span>
             <input id="jackett-allowext" class="form-control input-right" type="checkbox" />
         </div>
         <div class="input-area">
-            <span class="input-header">Allow CORS: </span>
+            <span class="input-header">允许跨域访问: </span>
             <input id="jackett-allowcors" class="form-control input-right" type="checkbox" />
         </div>
         <div class="input-area">
-            <span class="input-header">Disable auto update: </span>
+            <span class="input-header">关闭自动更新: </span>
             <input id="jackett-allowupdate" class="form-control input-right" type="checkbox" />
 
         </div>
         <div class="input-area">
-            <span class="input-header">Update to pre-release: </span>
+            <span class="input-header">预览版更新: </span>
             <input id="jackett-prerelease" class="form-control input-right" type="checkbox" />
 
         </div>
         <div class="input-area">
-            <span class="input-header">Enhanced logging: </span>
+            <span class="input-header">增强的日志记录: </span>
             <input id="jackett-logging" class="form-control input-right" type="checkbox" />
         </div>
         <div class="input-area">
-            <span class="input-header">Cache enabled (recommended): </span>
+            <span class="input-header">启用缓存 (推荐): </span>
             <input id="jackett-cache-enabled" class="form-control input-right" type="checkbox" />
         </div>
         <div class="input-area">
-            <span class="input-header">Cache TTL (seconds): </span>
+            <span class="input-header">缓存 TTL (秒): </span>
             <input id="jackett-cache-ttl" class="form-control input-right" type="text" value="" placeholder="2100">
         </div>
         <div class="input-area">
-            <span class="input-header">Cache max results per indexer: </span>
+            <span class="input-header">每个索引器的缓存最大结果数: </span>
             <input id="jackett-cache-max-results-per-indexer" class="form-control input-right" type="text" value="" placeholder="1000">
         </div>
         <div class="input-area">
@@ -213,11 +213,11 @@
           <input id="jackett-flaresolverrurl" class="form-control input-right" type="url" value="" placeholder="Blank for default">
         </div>
         <div class="input-area">
-          <span class="input-header">FlareSolverr Max Timeout (ms): </span>
+          <span class="input-header">FlareSolverr 最大超时 (ms): </span>
           <input id="jackett-flaresolverr-maxtimeout" class="form-control input-right" type="text" value="" placeholder="55000">
         </div>
         <div class="input-area">
-            <span class="input-header">OMDB API key: </span>
+            <span class="input-header">OMDB API Key: </span>
             <input id="jackett-omdbkey" class="form-control input-right" type="text" value="" placeholder="">
         </div>
         <div class="input-area">
@@ -320,8 +320,8 @@
             <table id="configured-indexer-datatable" class="indexer-table dataTable compact cell-border hover stripe table table-responsive" style="width: 100%">
                 <thead>
                     <tr>
-                        <th>Indexer</th>
-                        <th>Actions</th>
+                        <th>索引器</th>
+                        <th>操作</th>
                         <th data-type="hiddendata">URL</th>
                     </tr>
                 </thead>
@@ -331,9 +331,9 @@
                         <td><a target="_blank" href="{{site_link}}" title="{{description}}">{{name}}</a> <span title="{{type}}" class="label label-{{type_label}}" style="text-transform: capitalize;">{{type}}</span>{{#each tags}} <span title="{{this}}" class="label label-tag">{{this}}</span>{{/each}}</td>
                         <td class="fit">
                             <div class="indexer-buttons">
-                                <a href="{{rss_host}}" title="{{rss_host}}" role="button" class="indexer-button-copy btn btn-xs btn-info">Copy RSS Feed</i></a>
-                                <a href="{{torznab_host}}" title="{{torznab_host}}" role="button" class="indexer-button-copy btn btn-xs btn-info">Copy Torznab Feed</a>
-                                <a href="{{potato_host}}" title="{{potato_host}}" role="button" class="indexer-button-copy btn btn-xs btn-info{{#unless potatoenabled}} disabled{{/unless}}">Copy Potato Feed</a>
+                                <a href="{{rss_host}}" title="{{rss_host}}" role="button" class="indexer-button-copy btn btn-xs btn-info">复制 RSS 源</i></a>
+                                <a href="{{torznab_host}}" title="{{torznab_host}}" role="button" class="indexer-button-copy btn btn-xs btn-info">复制 Torznab Feed</a>
+                                <a href="{{potato_host}}" title="{{potato_host}}" role="button" class="indexer-button-copy btn btn-xs btn-info{{#unless potatoenabled}} disabled{{/unless}}">复制 Potato Feed</a>
 
                                 <button title="Search" class="btn btn-success btn-xs indexer-button-search" data-id="{{id}}">
                                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -371,11 +371,11 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Indexer</th>
-                        <th>Categories</th>
-                        <th>Type</th>
+                        <th>索引器</th>
+                        <th>类别</th>
+                        <th>类型</th>
                         <th data-type="hiddendata">Type string</th>
-                        <th>Language</th>
+                        <th>语言</th>
                         <th></th>
                         <th data-type="hiddendata">URL</th>
                     </tr>
@@ -412,11 +412,11 @@
                 <tfoot>
                     <tr>
                         <th></th>
-                        <th>Indexer</th>
-                        <th>Categories</th>
-                        <th>Type</th>
+                        <th>索引器</th>
+                        <th>类别</th>
+                        <th>类型</th>
                         <th data-type="hiddendata">Type string</th>
-                        <th>Language</th>
+                        <th>语言</th>
                         <th></th>
                         <th data-type="hiddendata">URL</th>
                     </tr>
@@ -640,16 +640,16 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Select an indexer to setup</h4>
+                        <h4 class="modal-title">选择要设置的索引器</h4>
                     </div>
                     <div class="modal-body">
                         <div id="unconfigured-indexers">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="add-selected-indexers" class="btn btn-default">Add Selected</button>
+                        <button type="button" id="add-selected-indexers" class="btn btn-default">添加所选内容</button>
                         <button type="button" id="close-selected-indexers" class="btn btn-default"
-                            data-dismiss="modal">Close</button>
+                            data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>
@@ -738,7 +738,7 @@
         <button id="jackett-filters-dropdown" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="jackett-filters-dropdown">
-            <li class="{{#if_eq active null}}active{{/if_eq}}"><a href="#">All</a></li>
+            <li class="{{#if_eq active null}}active{{/if_eq}}"><a href="#">全部</a></li>
             {{#each filters}}
             <li class="{{#if_eq ../active id}}active{{/if_eq}}"><a href="#indexers&filter={{id}}" data-id="{{id}}">{{id}}</a></li>
             {{/each}}
