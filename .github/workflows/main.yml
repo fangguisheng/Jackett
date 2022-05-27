@@ -50,10 +50,10 @@ jobs:
           target: deploy
           push: true
           tags: |
-            fangguisheng/jackett:latest
-            fangguisheng/jackett:${{ steps.date.outputs.date }}
-            ghcr.io/fangguisheng/jackett-node:latest
-            ghcr.io/fangguisheng/jackett-node:${{ github.sha }}
+            fangguisheng/Jackett:latest
+            fangguisheng/Jackett:${{ steps.date.outputs.date }}
+            ghcr.io/fangguisheng/Jackett:latest
+            ghcr.io/fangguisheng/Jackett:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
           build-args: |
             COMMIT_SHA=${{ github.sha }}
