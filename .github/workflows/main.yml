@@ -52,8 +52,8 @@ jobs:
           tags: |
             fangguisheng/jackett:latest
             fangguisheng/jackett:${{ steps.date.outputs.date }}
-            ghcr.io/fangguisheng/Jackett:latest
-            ghcr.io/fangguisheng/Jackett:${{ github.sha }}
+            ghcr.io/fangguisheng/jackett:latest
+            ghcr.io/fangguisheng/jackett:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
           build-args: |
             COMMIT_SHA=${{ github.sha }}
